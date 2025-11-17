@@ -19,14 +19,6 @@ p {
     opacity: 0.85;
 }
 
-label {
-    color:white;
-    font-family: Corbel;
-}
-
-.input {
-    font-family: Tilt Neon;
-}
 
 .minus-button,
 .plus-button {
@@ -68,4 +60,12 @@ button {
 .drinkCountContainer {
     display: flex;
     align-items: center;
+}
+
+
+.ingAmountStyle {
+    color:white;
+    font-size: 34px;
+    font-weight: bold;
+    opacity: 1.0;
 }

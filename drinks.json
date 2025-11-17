@@ -1,0 +1,9 @@
+[
+  { "id": "borovicka", "name": "borovička", "unit": "ml", "amount": 40 },
+  { "id": "cranberrySyrup", "name": "cranberry syrup", "unit": "ml", "amount": 20 },
+  { "id": "spruceSyrup", "name": "spruce syrup", "unit": "ml", "amount": 20 },
+  { "id": "soda", "name": "soda", "unit": "ml", "amount": 100 },
+  { "id": "matcha", "name": "matcha", "unit": "g", "amount": 3 },
+  { "id": "pineCone", "name": "pinecone", "unit": "", "amount": 1 },
+  { "id": "rosemary", "name": "rosemary sprig", "unit": "", "amount": 1 }
+]

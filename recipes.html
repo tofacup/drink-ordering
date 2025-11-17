@@ -22,52 +22,52 @@
                         increaseQuantity();
                         ">+</button>
                 </div>
-                <div>
+                <div class="recipeContainer">
                     <p class="h1">Lost in the Forest</p>
-                    <p id="borovicka" class="h2"></p>
-                    <p id="cranberrySyrup" class="h2"></p>
-                    <p id="spruceSyrup" class="h2"></p>
-                    <p id="soda" class="h2"></p>
-                    <p id="matcha" class="h2"></p>
-                    <p id="pineCone" class="h2"></p>
-                    <p id="rosemary" class="h2"></p>
+                    <div id="ingredients" class="h2"></div>
                 </div>
             </div>
         </div>
     <script>
         let drinkQuantity = 1;
 
-        let borovickaAmount = 40;
-        let cranberrySyrupAmount = 20;
-        let spruceSyrupAmount = 20;
-        let sodaAmount = 100;
-        let matchaAmount = 3;
-        let pineConeAmount = 1;
-        let rosemaryAmount = 1;
+        const ingredients = [
+            { id: 'borovicka', name: 'borovička', unit: 'ml', amount: 40 },
+            { id: 'cranberrySyrup', name: 'cranberry syrup', unit: 'ml', amount: 20 },
+            { id: 'spruceSyrup', name: 'spruce syrup', unit: 'ml', amount: 20 },
+            { id: 'soda', name: 'soda', unit: 'ml', amount: 100 },
+            { id: 'matcha', name: 'matcha', unit: 'g', amount: 3 },
+            { id: 'pineCone', name: 'pinecone', unit: '', amount: 1 },
+            { id: 'rosemary', name: 'rosemary sprig', unit: '', amount: 1 }
+        ];
 
+        const ingredientsContainer = document.getElementById('ingredients') 
+
+        ingredients.forEach(ing => {
+            const p = document.createElement('p');
+            p.className = 'h2';
+            p.id = ing.id;
+            ingredientsContainer.appendChild(p);
+        })
+        
+        
         drinkQuantityDisplay.innerHTML = drinkQuantity;
-        document.getElementById('borovicka').textContent = borovickaAmount + ' ml borovička';
-        document.getElementById('cranberrySyrup').textContent = cranberrySyrupAmount + ' ml cranberry syrup';
-        document.getElementById('spruceSyrup').textContent = spruceSyrupAmount + ' ml spruce syrup';
-        document.getElementById('soda').textContent = sodaAmount + ' ml soda';
-        document.getElementById('matcha').textContent = matchaAmount + ' g matcha';
-        document.getElementById('pineCone').textContent = pineConeAmount + ' pinecone';
-        document.getElementById('rosemary').textContent = rosemaryAmount + ' rosemary sprig';
+        
+        function amountUpdate() {
+            ingredients.forEach(ing => {
+                const total = ing.amount * drinkQuantity;
+                document.getElementById(ing.id).innerHTML = `<span class="ingAmountStyle">${total}</span> <strong>${ing.unit}</strong> ${ing.name}`.trim();
+            })
+        };
 
-
+        amountUpdate();
 
         function increaseQuantity() {
             if (drinkQuantity < 6) {
                 drinkQuantity++;    
             }
             drinkQuantityDisplay.innerHTML = drinkQuantity;
-            document.getElementById('borovicka').textContent = borovickaAmount * drinkQuantity + ' ml borovička';
-            document.getElementById('cranberrySyrup').textContent = cranberrySyrupAmount * drinkQuantity + ' ml cranberry syrup';
-            document.getElementById('spruceSyrup').textContent = spruceSyrupAmount * drinkQuantity + ' ml spruce syrup';
-            document.getElementById('soda').textContent = sodaAmount * drinkQuantity + ' ml soda';
-            document.getElementById('matcha').textContent = matchaAmount * drinkQuantity + ' g matcha';
-            document.getElementById('pineCone').textContent = pineConeAmount * drinkQuantity + ' pinecone';
-            document.getElementById('rosemary').textContent = rosemaryAmount * drinkQuantity + ' rosemary sprig';
+            amountUpdate();
         }
 
         function decreaseQuantity() {
@@ -75,13 +75,7 @@
                 drinkQuantity--;
             } else {}
             drinkQuantityDisplay.innerHTML = drinkQuantity;
-            document.getElementById('borovicka').textContent = borovickaAmount * drinkQuantity + ' ml borovička';
-            document.getElementById('cranberrySyrup').textContent = cranberrySyrupAmount * drinkQuantity + ' ml cranberry syrup';
-            document.getElementById('spruceSyrup').textContent = spruceSyrupAmount * drinkQuantity + ' ml spruce syrup';
-            document.getElementById('soda').textContent = sodaAmount * drinkQuantity + ' ml soda';
-            document.getElementById('matcha').textContent = matchaAmount * drinkQuantity + ' g matcha';
-            document.getElementById('pineCone').textContent = pineConeAmount * drinkQuantity + ' pinecone';
-            document.getElementById('rosemary').textContent = rosemaryAmount * drinkQuantity + ' rosemary sprig';
+            amountUpdate();
         }
         
 
