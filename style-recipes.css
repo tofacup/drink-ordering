@@ -1,0 +1,71 @@
+body {
+    background-color: #123524;
+}
+
+p {
+    font-family: Tilt Neon;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.h1 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.h2 {
+    font-size: 20px;
+    font-family: Corbel;
+    opacity: 0.85;
+}
+
+label {
+    color:white;
+    font-family: Corbel;
+}
+
+.input {
+    font-family: Tilt Neon;
+}
+
+.minus-button,
+.plus-button {
+    height: 20px;
+    width: 20px;
+    font-family: Tilt Neon;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border-color: white;
+    border-style: solid;
+    background-color: transparent;
+    padding-bottom: 3px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.minus-button {
+    margin-right: 12px;
+}
+
+.plus-button {
+    margin-left: 12px;
+}
+
+.number {
+    display: inline-block;
+    color:white;
+    font-size: 40px;
+    font-family: Tilt Neon;
+}
+
+.drinkCountContainer {
+    display: flex;
+    align-items: center;
+}

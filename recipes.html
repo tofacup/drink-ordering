@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recipes</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="style-recipes.css">
+
+    </head>
+    <body>
+        <div class="carousel">
+            <div class="group">
+                <div class="drinkCountContainer">
+                    <button class="minus-button" onclick="
+                        decreaseQuantity();
+                        ">-</button>
+                    <span id="drinkQuantityDisplay" class="number"></span>
+                    <button class="plus-button" onclick="
+                        increaseQuantity();
+                        ">+</button>
+                </div>
+                <div>
+                    <p class="h1">Lost in the Forest</p>
+                    <p id="borovicka" class="h2"></p>
+                    <p id="cranberrySyrup" class="h2"></p>
+                    <p id="spruceSyrup" class="h2"></p>
+                    <p id="soda" class="h2"></p>
+                    <p id="matcha" class="h2"></p>
+                    <p id="pineCone" class="h2"></p>
+                    <p id="rosemary" class="h2"></p>
+                </div>
+            </div>
+        </div>
+    <script>
+        let drinkQuantity = 1;
+
+        let borovickaAmount = 40;
+        let cranberrySyrupAmount = 20;
+        let spruceSyrupAmount = 20;
+        let sodaAmount = 100;
+        let matchaAmount = 3;
+        let pineConeAmount = 1;
+        let rosemaryAmount = 1;
+
+        drinkQuantityDisplay.innerHTML = drinkQuantity;
+        document.getElementById('borovicka').textContent = borovickaAmount + ' ml borovička';
+        document.getElementById('cranberrySyrup').textContent = cranberrySyrupAmount + ' ml cranberry syrup';
+        document.getElementById('spruceSyrup').textContent = spruceSyrupAmount + ' ml spruce syrup';
+        document.getElementById('soda').textContent = sodaAmount + ' ml soda';
+        document.getElementById('matcha').textContent = matchaAmount + ' g matcha';
+        document.getElementById('pineCone').textContent = pineConeAmount + ' pinecone';
+        document.getElementById('rosemary').textContent = rosemaryAmount + ' rosemary sprig';
+
+
+
+        function increaseQuantity() {
+            if (drinkQuantity < 6) {
+                drinkQuantity++;    
+            }
+            drinkQuantityDisplay.innerHTML = drinkQuantity;
+            document.getElementById('borovicka').textContent = borovickaAmount * drinkQuantity + ' ml borovička';
+            document.getElementById('cranberrySyrup').textContent = cranberrySyrupAmount * drinkQuantity + ' ml cranberry syrup';
+            document.getElementById('spruceSyrup').textContent = spruceSyrupAmount * drinkQuantity + ' ml spruce syrup';
+            document.getElementById('soda').textContent = sodaAmount * drinkQuantity + ' ml soda';
+            document.getElementById('matcha').textContent = matchaAmount * drinkQuantity + ' g matcha';
+            document.getElementById('pineCone').textContent = pineConeAmount * drinkQuantity + ' pinecone';
+            document.getElementById('rosemary').textContent = rosemaryAmount * drinkQuantity + ' rosemary sprig';
+        }
+
+        function decreaseQuantity() {
+            if (drinkQuantity > 1) {
+                drinkQuantity--;
+            } else {}
+            drinkQuantityDisplay.innerHTML = drinkQuantity;
+            document.getElementById('borovicka').textContent = borovickaAmount * drinkQuantity + ' ml borovička';
+            document.getElementById('cranberrySyrup').textContent = cranberrySyrupAmount * drinkQuantity + ' ml cranberry syrup';
+            document.getElementById('spruceSyrup').textContent = spruceSyrupAmount * drinkQuantity + ' ml spruce syrup';
+            document.getElementById('soda').textContent = sodaAmount * drinkQuantity + ' ml soda';
+            document.getElementById('matcha').textContent = matchaAmount * drinkQuantity + ' g matcha';
+            document.getElementById('pineCone').textContent = pineConeAmount * drinkQuantity + ' pinecone';
+            document.getElementById('rosemary').textContent = rosemaryAmount * drinkQuantity + ' rosemary sprig';
+        }
+        
+
+    
+
+    </script>
+    </body>
+</html>
